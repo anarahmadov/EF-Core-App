@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Request>
+@{
+    ViewData["Title"] = "View";
+}
+
+<div class="p-4">
+    <div class="bg-success text-white p-3">
+        Requests list
+    </div>
+
+    <div class="table-responsive">
+
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+                        <td>@item.Message</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

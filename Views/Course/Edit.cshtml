@@ -1,0 +1,50 @@
+﻿@model Course
+@{
+    ViewData["Title"] = ViewBag.ActionMode;
+}
+
+<div class="p-3">
+    <form asp-action="@ViewBag.ActionMode" method="post">
+        <input type="hidden" name="original.Id" class="form-control" value="@Model.Id" />
+        <input type="hidden" name="original.Name" class="form-control" value="@Model.Name" />
+        <input type="hidden" name="original.Description" class="form-control" value="@Model.Description" />
+        <input type="hidden" name="original.Price" class="form-control" value="@Model.Price" />
+        <input type="hidden" name="original.IsActive" class="form-control" value="@Model.IsActive" />
+        <input type="hidden" name="original.Instructor.Id" class="form-control" value="@Model.Instructor.Id" />
+        <input type="hidden" name="original.Instructor.City" class="form-control" value="@Model.Instructor.City" />
+        <input type="hidden" name="original.Instructor.Name" class="form-control" value="@Model.Instructor.Name" />
+
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" />
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Instructor.Id"></label>
+
+            <select asp-for="Instructor.Id" 
+                    asp-items="@ViewBag.Instructors" class="form-control">
+            </select>
+                
+        </div>
+
+        <div class="form-group">
+            <label asp-for="IsActive"></label>
+            <input asp-for="IsActive" class="form-check" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

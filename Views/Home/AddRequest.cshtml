@@ -1,0 +1,34 @@
+﻿@model Request
+
+@{
+    ViewData["Title"] = "AddRequest";
+}
+
+<div class="text-white bg-success m-5 p-3">
+    Create a request
+</div>
+
+<form asp-action="AddRequest" asp-controller="Home" class="m-5">
+    <div class="form-group">
+        <label asp-for="@Model.Name">Name</label>
+        <input asp-for="@Model.Name" class="form-control" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Email">Email</label>
+        <input asp-for="@Model.Email" class="form-control" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Phone">Phone</label>
+        <input asp-for="@Model.Phone" class="form-control" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Message">Message</label>
+        <input asp-for="@Model.Message" class="form-control" placeholder="Enter email">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
